@@ -1,6 +1,6 @@
 ﻿**Дипломная работа. Бэкенд.**
 
-https://github.com/MarussiaZhiganova/project_15
+https://github.com/MarussiaZhiganova/news-explorer-api/tree/level-1
 
 Версия: 0.0.1
 
@@ -16,10 +16,10 @@ https://github.com/MarussiaZhiganova/project_15
 -   Бэкенд проекта доступен по адресам:
     -   [api.mestomaru.xyz](https://api.mestomaru.xyz/)
     -   [www.api.mestomaru.xyz](https://www.api.mestomaru.xyz/)
-    -   [84.201.129.215](http://84.201.129.215/)
--   [Актуальная версия проекта на Github - v0.0.1](https://github.com/MarussiaZhiganova/project_15)
+    -   [178.154.224.253](http://178.154.224.253/)
+-   [Актуальная версия проекта на Github - v0.0.1](https://github.com/MarussiaZhiganova/news-explorer-api/tree/level-1)
 
-Public IP: 84.201.129.215
+Public IP: 178.154.224.253
 
   
 
