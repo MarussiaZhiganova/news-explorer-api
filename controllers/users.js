@@ -6,12 +6,13 @@ const UnauthorizedError = require('../errors/unauthorized-err');
 const User = require('../models/user');
 
 const { JWT_SECRET } = require('../secret');
+const { EMPTY_DATABASE, FAILED_CREATE_USER, ERROR_EMAIL_PASS } = require('../configs/constant');
 
 module.exports.getAllUsers = (req, res, next) => {
   User.find({})
     .then((user) => {
       if (user.length === 0) {
-        return (new NotFoundError('База данных user пуста!'));
+        return (new NotFoundError(EMPTY_DATABASE));
       }
       return res.send({ data: user });
     })
@@ -39,7 +40,7 @@ module.exports.getUser = (req, res, next) => {
   // User.findById(req.user._id)
     .then((userId) => {
       if (!userId) {
-        throw new NotFoundError('Такого пользователя нет');
+        throw new NotFoundError(FAILED_CREATE_USER);
       } else {
         res.send({ userId });
       }
@@ -62,7 +63,7 @@ module.exports.login = (req, res, next) => {
         .end();
     })
     .catch((err) => {
-      if (err.message !== 'Неправильные почта или пароль') {
+      if (err.message !== (ERROR_EMAIL_PASS)) {
         return next(err);
       }
       return next(new UnauthorizedError(err.message));

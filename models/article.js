@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
-
+const { BAD_REQUEST } = require('../configs/constant');
 
 const articleSchema = new mongoose.Schema({
   keyword: {
@@ -28,7 +28,7 @@ const articleSchema = new mongoose.Schema({
       validator(link) {
         return validator.isURL(link);
       },
-      message: (url) => `${url.value} некорректный адрес!`,
+      message: BAD_REQUEST,
     },
     type: String,
     required: true,
@@ -38,7 +38,7 @@ const articleSchema = new mongoose.Schema({
       validator(link) {
         return validator.isURL(link);
       },
-      message: (url) => `${url.value} некорректный адрес!`,
+      message: BAD_REQUEST,
     },
     type: String,
     required: true,

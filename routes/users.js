@@ -3,8 +3,8 @@ const { celebrate, Joi } = require('celebrate');
 
 const { getAllUsers, getUser } = require('../controllers/users');
 
-router.get('/users/me', getAllUsers);
-router.get('/users/:userId', celebrate({
+router.get('/me', getAllUsers);
+router.get('/:userId', celebrate({
   params: Joi.object().keys({
     userId: Joi.string().hex().length(24),
   }),
